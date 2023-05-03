@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+   /* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navigation bar styles */
+  nav {
+    background-color: #333;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .menu li {
+    margin: 0 10px;
+    list-style: none;
+  }
+  
+  .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .menu li a:hover {
+    color: rgb(175, 255, 175);
+  }
+  
+  .download{
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 5px;
+  }
+
+  .download:hover{
+    background-color: #5e5e5e;
+  }
+  
+  /* Hero section styles */
+ 
+
+  .hero {
+    background: url('DSC09180.jpg') center/cover no-repeat;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fade-in 1s ease-out;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  
+  .hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  /* About section styles */
+  .about {
+    background-color: #f9f9f9;
+    padding: 50px;
+  }
+  
+  .about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Education section styles */
+  .education {
+    background-color: #fff;
+    padding: 50px;
+  }
+  
+  .education h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .education ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  .education li {
+    margin-bottom: 10px;
+  }
+  
+  /* Projects section styles */
+  .projects {
+    background-color: #f9f9f9;
+    padding: 50px;
+  }
+  
+  .projects h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .projects ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  .projects li {
+    margin-bottom: 10px;
+  }
+
+  .achievements {
+    background-color: #f9f9f9;
+    padding: 50px;
+  }
+  
+  .achievements h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .achievements ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  .achievements li {
+    margin-bottom: 10px;
+  }
+  
+  .interests {
+    background-color: #fff;
+    padding: 50px;
+  }
+  
+  .interests h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .interests ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  .interests li {
+    margin-bottom: 10px;
+  }
+
+  /* Contact section styles */
+  .contact {
+    background-color: #fff;
+    padding: 50px;
+  }
+  
+  .contact h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .contact input,
+  .contact textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .contact button:hover {
+    background-color: #555;
+  }
+  
+  /* Back to top button styles */
+  .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Footer styles */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+  }
+
+</style>
+<body>
+  <!-- Navigation bar -->
+  <nav>
+    <div class="logo">
+      <a href="#"><img src="Bishal.jpg" alt="Logo"></a>
+    </div>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Portfolio</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#projects"> Contact</a><i></li>
+      <li><a href="#projects" class="download"><i class="fa-solid fa-download"> Download CV</a></i></li>
+    </ul>
+  </nav>
+  
+
+  <!-- Hero section with parallax effect and animation -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to my portfolio</h1>
+      <p>My name is Bishal Timsina and I am a web developer, an enthusiastic, self-motivated, reliable, responsible and hard working person and can work in all type of environments</p>
+    </div>
+  </section>
+
+  <!-- About section -->
+  <section id="about" class="about">
+    <h2>About Myself</h2>
+    <p>I am passionate about cybersecurity and ethical hacking and look forward to applying my skills and knowledge in a professional setting. I am highly motivated, detail-oriented, and committed to continuous learning and development in this dynamic field. To work with all of my skills and experience for practical use of IT technologies and wish to work in an organization where I can sharpen my skills, expand my knowledge and work for the welfare of the human race.</p>
+  </section>
+
+  <!-- Education section -->
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor of Science in Computer Science - Softwarica college of IT and E-commerce</li>
+      <li>Web Development Certificate - ABC Institute</li>
+    </ul>
+    <ul>
+      <li>Plus 2 - Southwestern state college</li>
+      <li>Web Development Certificate - ABC Institute</li>
+    </ul>
+  </section>
+
+  <!-- Projects section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>Project 1 - ................................</li>
+      <li>Project 2 - ................................</li>
+      <li>Project 3 - ................................</li>
+    </ul>
+  </section>
+
+  <section id="achievements" class="achievements">
+    <h2>Achievents</h2>
+    <ul>
+      <li>- 1st Runner up in PABSON Volleyball Competition 2075 B.S.</li>
+      <li>- 1st Runner up in PABSON football Competition 2075 B.S.</li>
+      <li>- 1st Runner up in Relay Race- 500 meter 2075 B.S.</li>
+      <li>- 1st Runner up in Rastrapati Running Shield 300 meter 2075 B.S</li>
+      <li>- 2nd Runner up in 100meter Rastrapati Running Shield 2075 B.S</li>
+      <li>- 1st Runner up in Falgunandha Gold Cup 2076, B.S.,</li>
+      <li>- 2nd Runner up in Debate Competition 2076 B.S.</li>
+    </ul>
+  </section>
+
+  <section id="interests" class="interests">
+    <h2>Interests</h2>
+    <ul>
+      <li>Football</li>
+      <li>Volleyball</li>
+      <li>Badminton</li>
+      <li>Table Tennis</li>
+      <li>Futsal</li>
+      <li>and so on</li>
+    </ul>
+  </section>
+  <!-- Contact section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form action="">
+      <label for="name">Name:</label>
+       <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+    <!-- Back to top button -->
+    <a href="#home" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    </footer>
+  
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+  </html>
+  
